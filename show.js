@@ -1,5 +1,5 @@
 addEventListener('DOMContentLoaded', async()=>{
-let promise = await fetch('/productos.json')
+let promise = await fetch('productos.json')
 let result = await promise.json()
 data = result
 show(data.productos)
