@@ -44,10 +44,17 @@
         </thead>
         <tbody id="productos">
         </tbody>
+        <tfoot>
+          <tr>
+            <td>Total balance:</td>
+            <td><span id="result"></span></td>
+          </tr>
+        </tfoot>
       </table>
         </div>
     </div>
   </div>
+  <button type="button" class="btn btn-primary float-end mb-5" id="result" onclick="sumatoria()" >balance</button>
     <button type="button" class="btn btn-primary float-end mb-5" id="calculate" onclick="calcular()" >Calcular Totales</button>
     <button type="button" class="btn btn-primary float-end me-5" id="getXLS" onclick="exportToExcel()">Exportar a Excel</button>
 </div>
