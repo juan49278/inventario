@@ -25,3 +25,4 @@ function exportToExcel(){
               link.href = uri + base64(format(template, ctx));
               link.click();
   }
+  
