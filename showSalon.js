@@ -1,5 +1,5 @@
 addEventListener('DOMContentLoaded', async()=>{
-let promise = await fetch('productos.json')
+let promise = await fetch('productosSalon.json')
 let result = await promise.json()
 data = result
 show(data.productos)
@@ -21,11 +21,9 @@ function show(){
 function calcular(){
 let todosInputs = document.querySelectorAll('input');
 for(let i=0; i < todosInputs.length ;i ++){
-let a = document.querySelectorAll('input.cant')[i].value;
+let a = document.querySelectorAll('input.cant')[i].value
 let b = document.querySelectorAll('input.precio')[i].value
 let c = b * a;
 document.querySelectorAll('span')[i].innerHTML = c
 }
 }
-let tabla= document.getElementById('productos').innerHTML
-tabla = localStorage.setItem('tabla', tabla)
