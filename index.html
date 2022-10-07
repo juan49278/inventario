@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -77,11 +77,25 @@
   document.querySelector(`#result`).innerHTML = resultado;
 }
   </script>
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+   <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+     <script>
+     $(document).ready( ()=> {
+       $("#getXLS").click(function() {
+     $("#content").table2excel({
+       exclude: ".noExl",
+       name: "Worksheet Name",
+       filename: "Inventario",
+       fileext: ".xls"
+     }); 
+   });
+   })
+     </script>
 </div>
 <div class="d-flex justify-content-sm-evenly mb-5 justify-content-evenly">
   <button type="button" class="btn btn-primary" id="result" onclick="calculoBalance()">Balance</button>
   <button type="button" class="btn btn-primary" id="calculate" onclick="calcular()" >Calcular Totales</button>
-  <button type="button" class="btn btn-primary" onclick="save()">Exportar a Excel</button>
+  <button type="button" class="btn btn-primary" id="getXLS">Exportar a Excel</button>
 </div>
 </body>
 </html>

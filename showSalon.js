@@ -11,8 +11,8 @@ function show(){
         toAppened += `<tr>
         <th scope="row">${[i+1]}</th>
         <td class="col-span-2">${data.productos.sort()[i]}</td>
-        <td class="col-span-2"><input type="number" class="cant" value="">
-        <td class="col-span-2"><input type="number" class="precio" value="">
+        <td class="col-span-2"><input type="number" class="cant" value=""><p class="cant d-none"></p>
+        <td class="col-span-2"><input type="number" class="precio" value=""><p class="precio d-none"></p>
         <td onclick="calcular()" class="col-span-2"><span class="total" id="${i}total"></span>
         </tr>`
     }
@@ -21,9 +21,11 @@ function show(){
 function calcular(){
 let todosInputs = document.querySelectorAll('input');
 for(let i=0; i < todosInputs.length ;i ++){
-let a = document.querySelectorAll('input.cant')[i].value
-let b = document.querySelectorAll('input.precio')[i].value
+let a = document.querySelectorAll('input.cant')[i].value;
+let b = document.querySelectorAll('input.precio')[i].value;
 let c = b * a;
 document.querySelectorAll('span')[i].innerHTML = c
+document.querySelectorAll('p.cant')[i].innerHTML = a
+document.querySelectorAll('p.precio')[i].innerHTML = b
 }
 }
