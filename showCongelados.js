@@ -1,8 +1,10 @@
 addEventListener('DOMContentLoaded', async()=>{
+    showSpinner()
     let promise = await fetch('productosCongelados.json')
     let result = await promise.json()
     data = result
     show(data.productos)
+    hideSpinner()
     })
     
     function show(){
@@ -29,3 +31,11 @@ addEventListener('DOMContentLoaded', async()=>{
     document.querySelectorAll('p.precio')[i].innerHTML = b
     }
     }
+    
+    let showSpinner = function(){
+        document.getElementById("spinner-wrapper").style.display = "block";
+      }
+      
+      let hideSpinner = function(){
+        document.getElementById("spinner-wrapper").style.display = "none";
+      }
