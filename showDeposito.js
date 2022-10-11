@@ -13,8 +13,8 @@ addEventListener('DOMContentLoaded', async()=>{
             toAppened += `<tr>
             <th scope="row">${[i+1]}</th>
             <td class="col-span-2">${data.productos.sort()[i]}</td>
-            <td class="col-span-2"><input type="number" class="cant" value=""><p class="cant d-none"></p>
-            <td class="col-span-2"><input type="number" class="precio" value=""><p class="precio d-none"></p>
+            <td class="col-span-2"><input type="number" class="form-control cant col-8 col-md-3" value="" aria-label="cant"><p class="cant d-none"></p>
+            <td class="col-span-2"><input type="number" class="form-control precio col-10 col-md-3" value="" aria-label="precio"><p class="precio d-none"></p>
             <td onclick="calcular()" class="col-span-2"><span class="total" id="${i}total"></span>
             </tr>`
         }
