@@ -1,7 +1,7 @@
 #spinner {
   width: 64px;
   height: 64px;
-  border: 5px solid #fd000060;
+  border: 7px dotted #f1010105;
   border-radius: 50%;
   border-left-color: #ff0000;
   box-sizing: border-box;
@@ -10,7 +10,7 @@
   top: 50%;
   left: 50%;
   z-index: 1021;
-  animation: spin 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  animation: spin 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
 }
 @keyframes spin {
   0% {
@@ -25,6 +25,7 @@
   height: 100%;
   width: 100%;
   background-color: black;
+  background-size: cover;
   opacity: 0.9;
   display: none;
   box-sizing: border-box;
