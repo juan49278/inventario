@@ -33,10 +33,10 @@ addEventListener('DOMContentLoaded', async()=>{
   }
   
   let showSpinner = function(){
-      document.getElementById("spinner-wrapper").style.display = "block";
+      document.getElementById("animation").style.display = "block";
     }
     
     let hideSpinner = function(){
-      document.getElementById("spinner-wrapper").style.display = "none";
+      document.getElementById("animation").style.display = "none";
     }
   
