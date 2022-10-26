@@ -39,7 +39,7 @@ body{
   background-image: url('../frigo.png');
   background-size:cover;
   background-repeat:no-repeat;
-  width: max-content;
+  background-position: center;
   background-attachment:fixed;
   color: white;
 }
