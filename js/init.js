@@ -3,7 +3,7 @@ $(document).ready( ()=> {
   $("#content").table2excel({
     exclude: ".noExl",
     name: "Worksheet Name",
-    filename: "Inventario",
+    filename: "Inventario"+"_"+(document.title)+"_"+(document.getElementById("mes").value),
     fileext: ".xls"
   }); 
 });
