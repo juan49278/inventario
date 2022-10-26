@@ -1,3 +1,6 @@
+#table{
+  color: white;
+}
 #spinner {
   width: 64px;
   height: 64px;
@@ -31,4 +34,21 @@
   position:fixed;
   left: 0%;
   top: 0%;
+}
+body{
+  background-image: url('frigo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+}
+div.container{
+  background-color: rgb(10, 16, 70);
+  opacity: 0.8;
+}
+
+#footer{
+  background-color: rgb(10, 16, 70);
+  opacity: 0.9;
+  position: static;
 }

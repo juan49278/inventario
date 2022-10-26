@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventario</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/styles.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
@@ -66,19 +66,13 @@
     </div>
   </div>
 </div>
-<div class="d-flex justify-content-md-evenly mb-5 justify-content-evenly">
-  <button type="button" class="btn btn-outline-danger" id="result" onclick="calculoBalance()">Calcular balance</button>
-  <button type="button" class="btn btn-outline-danger" id="getXLS" onclick="getXLS()">Exportar a Excel</button>
-</div>
-<div id="animation">
-<div id="spinner">
-  </div>
-  <p class="text-white position-relative text-center d-block" style="width:50%;top:50%;left:28%;">Espera por favor</p>
-</div>
+<div class="d-flex justify-content-md-evenly mb-5 mt-4 justify-content-evenly">
+  <button type="button" class="btn btn-primary" id="result" onclick="calculoBalance()">Calcular balance</button>
+  <button type="button" class="btn btn-primary" id="getXLS">Exportar a Excel</button>
 </div>
 <footer class="text-muted">
-  <div class="container">
-    <p class="float-end">
+  <div class="container text-white text-start" id="footer">
+    <p class="float-end me-md-4">
       <a href="#">Volver arriba</a>
     </p>
     <p>Este sitio fue realizado solo para uso interno de la empresa. <br>
@@ -86,7 +80,12 @@
     </p>
   </div>
 </footer>
-<script src="showSalon.js" defer></script>
-<script src="init.js" defer></script>
+<div id="animation">
+  <div id="spinner">
+    </div>
+    <p class="text-white position-relative text-center d-block" style="width:50%;top:50%;left:28%;">Espera por favor</p>
+  </div>
+<script src="js/showSalon.js" defer></script>
+<script src="js/init.js" defer></script>
 </body>
 </html>

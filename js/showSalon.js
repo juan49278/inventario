@@ -1,6 +1,6 @@
 addEventListener('DOMContentLoaded', async()=>{
 showSpinner()
-let promise = await fetch('productosSalon.json')
+let promise = await fetch('json/productosSalon.json')
 let result = await promise.json()
 data = result
 show(data.productos)
@@ -20,22 +20,3 @@ function show(){
     }
     document.getElementById('productos').innerHTML = toAppened
 }
-function calcular(){
-let todosInputs = document.querySelectorAll('input');
-for(let i=0; i < todosInputs.length ;i ++){
-let a = document.querySelectorAll('input.cant')[i].value;
-let b = document.querySelectorAll('input.precio')[i].value;
-let c = b * a;
-document.querySelectorAll('span')[i].innerHTML = c
-document.querySelectorAll('p.cant')[i].innerHTML = a
-document.querySelectorAll('p.precio')[i].innerHTML = b
-}
-}
-
-let showSpinner = function(){
-    document.getElementById("animation").style.display = "block";
-  }
-  
-  let hideSpinner = function(){
-    document.getElementById("animation").style.display = "none";
-  }
