@@ -39,11 +39,11 @@ body{
   background-image: url('../frigo.png');
   background-size:cover;
   background-repeat:no-repeat;
-  background-position: center;
+  background-position:top;
   background-attachment:fixed;
   color: white;
 }
-div.container{
+.container{
   background-color: rgb(10, 16, 70);
   opacity: 0.8;
 }
