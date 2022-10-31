@@ -40,3 +40,4 @@ function calculoBalance() {
   let hideSpinner = function(){
     document.getElementById("animation").style.display = "none";
   }
+  window.onbeforeunload = () => 1
