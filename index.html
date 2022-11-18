@@ -1,92 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salon</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<link rel="stylesheet" href="css/styles.css">
-<link rel="shortcut icon" href="frigo.ico" type="image/x-icon">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="frigo.ico" type="image/x-icon">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1 class="text-center">Inventario</h1>
-    <div class="container">
-      <h5>Selecciona fecha
-      </h5>
-      <div class="row-3">
-        <div class="col-3">
-    <input type="date" name="mes" id="mes" class="form-control mb-3">
-  </div>
-</div>
-</div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-              <div id="content">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Salon</button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><a href="deposito.html" style="text-decoration: none;">Deposito</a></button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><a href="congelados.html" style="text-decoration: none;">Congelados</a></button>
-                  </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                  <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"></div>
-                  <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"></div>
-                  <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0"></div>
-                </div>
-    <table class="table form-control-md" id="table">
-        <thead>
-          <tr class="form-control-md">
-            <th scope="col-span-2" class="col-1">#</th>
-            <th scope="col-span-2">Producto</th>
-            <th scope="col-span-2">Cantidad</th>
-            <th scope="col-span-2">Precio</th>
-            <th scope="col-span-2">Total $</th>
-          </tr>
-        </thead>
-        <tbody class="form-control-md" id="productos">
-        </tbody>
-        <tfoot>
-          <tr>
-            <td>Total balance:</td>
-            <td>$  <span id="result"></span></td>
-            <td>Fecha: <span id="mesVal"></span></td>
-          </tr>
-        </tfoot>
-      </table>
-        </div>
+  <h1 class="text-center">Inventario</h1>
+  <div class="container">
+    <h5>Selecciona fecha
+    </h5>
+    <div class="row-3">
+      <div class="col-3">
+        <input type="date" name="mes" id="mes" class="form-control mb-3">
+      </div>
     </div>
   </div>
-</div>
-<div class="d-flex justify-content-md-evenly mb-5 mt-4 justify-content-evenly">
-  <button type="button" class="btn btn-primary" id="result" onclick="calculoBalance()">Calcular balance</button>
-  <button type="button" class="btn btn-primary" id="getXLS">Exportar a Excel</button>
-</div>
-<footer class="text-muted">
-  <div class="container text-white text-start" id="footer">
-    <p class="float-end me-md-4">
-      <a href="#">Volver arriba</a>
-    </p>
-    <p>Este sitio fue realizado solo para uso interno de la empresa. <br>
-       Todos los derechos reservados 2022. Diseño y desarrollo por Juan M. contacto <a href="https://wa.me/+59897095516" target="_blank">aquí</a> -
-    </p>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div id="content">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Salon</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><a href="deposito.html"
+                  style="text-decoration: none;">Deposito</a></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><a
+                  href="congelados.html" style="text-decoration: none;">Congelados</a></button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+              tabindex="0"></div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+            </div>
+          </div>
+          <table class="table form-control-md" id="table">
+            <thead>
+              <tr class="form-control-md">
+                <th scope="col-span-2" class="col-1">#</th>
+                <th scope="col-span-2">Producto</th>
+                <th scope="col-span-2">Cantidad</th>
+                <th scope="col-span-2">Precio</th>
+                <th scope="col-span-2">Total $</th>
+              </tr>
+            </thead>
+            <tbody class="form-control-md" id="productos">
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total balance:</td>
+                <td>$ <span id="result"></span></td>
+                <td>Fecha: <span id="mesVal"></span></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
-</footer>
-<div id="animation">
-  <div id="spinner">
+  <div class="d-flex justify-content-md-evenly mb-5 mt-4 justify-content-evenly">
+    <button type="button" class="btn btn-success" id="result" onclick="calculoBalance()">Calcular balance</button>
+    <button type="button" class="btn btn-success" id="getXLS">Exportar a Excel</button>
+  </div>
+  <footer class="text-muted">
+    <div class="container text-white text-start" id="footer">
+      <p class="float-end me-md-4">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio fue realizado solo para uso interno de la empresa. <br>
+        Todos los derechos reservados 2022. Diseño y desarrollo por Juan M. contacto <a
+          href="https://wa.me/+59897095516" target="_blank">aquí</a> -
+      </p>
+    </div>
+  </footer>
+  <div id="animation">
+    <div id="spinner">
     </div>
     <p class="text-white position-relative text-center d-block" style="width:50%;top:50%;left:28%;">Espera por favor</p>
   </div>
-<script src="js/showSalon.js" defer></script>
-<script src="js/init.js" defer></script>
+  <script src="js/showSalon.js" defer></script>
+  <script src="js/init.js" defer></script>
 </body>
+
 </html>
