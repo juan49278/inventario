@@ -21,13 +21,13 @@
         <div class="row justify-content-center">
             <h1 class="mt-5 mb-5 text-center">Inicia sesion</h1>
             <div class="col col-md-5">
-                <form class="needs-validation form-floating" action="index.html" novalidate>
+                <form class="needs-validation form-floating" id="login" novalidate>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="user" placeholder="Nombre de usuario"
                             required>
                         <label for="user" class="text-black">Nombre de usuario</label>
                         <div class="invalid-feedback">
-                            <strong>Debe ingresar un nombre de usuario</strong>
+                            <strong>Ingresa un nombre de usuario valido</strong>
                         </div>
                     </div>
                     <div class="form-floating">
@@ -35,10 +35,10 @@
                             required>
                         <label for="password" class="text-black">Contraseña</label>
                         <div class="invalid-feedback">
-                            <strong>Debe ingresar la Contraseña</strong>
+                            <strong>Ingresa una contraseña valida</strong>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3 mb-5">Inicia sesion</button>
+                    <button type="button" class="btn btn-primary mt-3 mb-5" onclick="checkedForm()">Inicia sesion</button>
                 </form>
             </div>
         </div>
