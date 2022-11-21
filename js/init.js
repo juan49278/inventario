@@ -1,5 +1,6 @@
 $(document).ready(() => {
   $("#getXLS").click(function () {
+    alert()
     $("#content").table2excel({
       exclude: ".noExl",
       name: "Worksheet Name",
@@ -45,3 +46,13 @@ function guardarLocal() {
   let table = document.getElementById('table').innerHTML
   localStorage.setItem('table' + document.title, table)
 }
+
+function alert(){
+  Swal.fire({
+    title: 'Listo!',
+    text: 'Se empezó a descargar tu Excel',
+    icon: 'info'
+  })
+}
+
+const swal = require('sweetalert2')

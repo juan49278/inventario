@@ -1,6 +1,8 @@
 addEventListener('DOMContentLoaded', async () => {
     showSpinner()
     if (localStorage.getItem('tableSalon')) {
+        btnClean.classList.remove('btn-secondary','disabled')
+        btnClean.classList.add('btn-success')
         table.innerHTML = localStorage.getItem('tableSalon')
         let pCant = document.querySelectorAll('p.cant')
         let pPrecio = document.querySelectorAll('p.precio')
@@ -14,6 +16,8 @@ addEventListener('DOMContentLoaded', async () => {
         }
         hideSpinner()
     } else {
+        btnClean.classList.add('btn-secondary','disabled')
+        btnClean.classList.remove('btn-success')
         let promise = await fetch('json/productosSalon.json')
         let result = await promise.json()
         data = result
@@ -35,3 +39,8 @@ function show() {
     }
     document.getElementById('productos').innerHTML = toAppened
 }
+
+btnClean.addEventListener('click', ()=>{
+    localStorage.removeItem('tableSalon')
+    window.location.reload()
+})
