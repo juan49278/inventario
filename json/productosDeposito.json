@@ -216,7 +216,7 @@
         "Harina integral Caniuelas",
         "Harina pizza Caniuelas",
         "Harina leudante Caniuelas",
-        "Harina Donia blanca",
+        "Harina Blancanieves",
         "Grasa Mantex",
         "Grasa Cololo",
         "Sal sek",
@@ -325,7 +325,6 @@
         "Galletas Kuky",
         "Fideo Isabela inst.",
         "Galletas Hipopo",
-        "Obleas Hipopo",
         "Mayonesa Uruguay 500g",
         "Mayonesa Uruguay 1kg",
         "Vinagre Gamberoni alcohol 500ml",
@@ -338,11 +337,6 @@
         "Huevos x15",
         "Huevos x15 grandes",
         "Huevos x30",
-        "Whiskas",
-        "Champ",
-        "Pedigree Adulto",
-        "Pedigree cachorro",
-        "Amidog 7kg",
         "Pure de papas Puritas 125g",
         "Pure de papas Puritas 1kg",
         "Pure de papas Rio 125g",
@@ -353,6 +347,12 @@
         "Aceite Salamanca girasol",
         "Huevos maple Elaboracion",
         "Vino Cafayate",
-        "Medio y Medio Roldos"
+        "Medio y Medio Roldos",
+        "Atun Ideal",
+        "Jardinera Oderich",
+        "Salchicha Oderich",
+        "Papas Pay",
+        "Galletas Casaredo",
+        "Sal Tresal"
     ]
 }

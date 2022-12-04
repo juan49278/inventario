@@ -70,6 +70,9 @@
               </tr>
             </thead>
             <tbody class="form-control-md" id="productos">
+
+              <!-- <tr class="lastProduct">
+              </tr> -->
             </tbody>
             <tfoot>
               <tr>
@@ -103,6 +106,37 @@
     <div id="spinner">
     </div>
     <p class="text-white position-relative text-center d-block" style="width:50%;top:50%;left:28%;">Espera por favor</p>
+  </div>
+  <img src="./more.png" class="img-thumbnail position-fixed" width="55" data-bs-toggle="modal"
+    data-bs-target="#exampleModal" style="left:80%;top:85%;border-radius:100%;">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-black" id="exampleModalLabel">Menú Agregar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-black d-block">
+          <div class="row d-flex">
+            <div class="col">
+              Cantidad a sumar
+              <input type="number" class="form-control mt-2 mb-3" id="moreCant" placeholder="Ingresa una cantidad"
+                min="1">
+              Producto
+              <input type="number" class="form-control mt-2 mb-3" id="toId" placeholder="ID del producto" min="1">
+            </div>
+            <!-- <div class="col">
+          Agregar producto a la lista
+          <input type="text" class="form-control mt-2" placeholder="Nombre del producto" id="productAdd">
+          <button class="btn btn-success mt-3" id="btnAdd" onclick="addProduct()">Agregar Producto</button>
+        </div> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="sumCant()">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="js/showCongelados.js" defer></script>
   <script src="js/init.js" defer></script>

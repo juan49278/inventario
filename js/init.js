@@ -47,6 +47,35 @@ function guardarLocal() {
   localStorage.setItem('table' + document.title, table)
 }
 
+function sumCant(){
+  let newCant = moreCant.value
+  let idNumber = toId.value
+  let actualValue = document.querySelectorAll('input.cant')[idNumber -1].value
+  let result = parseInt(actualValue) + parseInt(newCant)
+  document.querySelectorAll('input.cant')[idNumber -1].value = result
+  if(document.querySelectorAll('input.cant')[idNumber -1].value == ""){
+    alertError()
+  }
+}
+
+/* function addProduct(){
+  product = []
+  let index = document.querySelectorAll('tr').length
+  let newProduct = productAdd.value
+ product = `<th scope="row">${index -1}</th>
+ <td class="col-span-2">${newProduct}</td>
+ <td class="col-span-2"><input type="number" placeholder="Cant." class="form-control cant col-8 col-md-3" aria-label="cant"><p class="cant d-none"></p>
+ <td class="col-span-2"><input type="number" placeholder="$" oninput="calcular()" onchange="guardarLocal()"class="form-control precio col-10 col-md-3" aria-label="precio"><p class="precio d-none"></p>
+ <td class="col-span-2"> $<span class="total"></span>`
+ document.querySelector('lastProduct').innerHTML += product
+} */
+function alertError(){
+  Swal.fire({
+    title:'Error',
+    text: 'Para poder sumar primero debes verificar que el producto ya tenga una cantidad',
+    icon: 'error'
+  })
+}
 function alert(){
   Swal.fire({
     title: 'Listo!',

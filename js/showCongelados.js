@@ -32,9 +32,9 @@ function show() {
         toAppened += `<tr>
           <th scope="row">${[i + 1]}</th>
           <td class="col-span-2">${data.productos.sort()[i]}</td>
-          <td class="col-span-2"><input type="number" placeholder="Cant." class="form-control cant col-8 col-md-3" value="" aria-label="cant"><p class="cant d-none"></p>
-          <td class="col-span-2"><input type="number" placeholder="$" oninput="calcular()" onchange="guardarLocal()"class="form-control precio col-10 col-md-3" value="" aria-label="precio"><p class="precio d-none"></p>
-          <td class="col-span-2">$<span class="total" id="${i}total"></span>
+          <td class="col-span-2"><input type="number" placeholder="Cant." class="form-control cant col-8 col-md-3" aria-label="cant"><p class="cant d-none"></p>
+          <td class="col-span-2"><input type="number" placeholder="$" oninput="calcular()" onchange="guardarLocal()"class="form-control precio col-10 col-md-3" aria-label="precio"><p class="precio d-none"></p>
+          <td class="col-span-2"> $<span class="total" id="${i}total"></span>
           </tr>`
     }
     document.getElementById('productos').innerHTML = toAppened
